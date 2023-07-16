@@ -43,7 +43,7 @@ class ProductDiscountService
 	}
 
 	/**
-	 * Apply any appplicabple product discounts to the order
+	 * Apply any appplicable product discounts to the order
 	 *
 	 * @return void
 	 */
@@ -54,6 +54,8 @@ class ProductDiscountService
 		foreach ($discounts as $discount) {
 			$this->applyDiscountToProducts($discount);
 		}
+
+		app()->make(CheckoutService::class)->calculateOrderTotal($this->order);
 	}
 
 	/**

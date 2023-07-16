@@ -17,7 +17,7 @@ class ProductFactory extends Factory
 	public function definition(): array
 	{
 		return [
-			'SKU' => strtoupper(fake()->unique()->randomLetter()),
+			'SKU' => strtoupper(fake()->unique()->lexify('?????')),
 			'price' => fake()->randomNumber(2),
 		];
 	}

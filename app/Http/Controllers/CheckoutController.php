@@ -34,8 +34,6 @@ class CheckoutController extends Controller
 
 		app()->makeWith(ProductDiscountService::class, ['order' => $order])->applyProductDiscounts();
 
-		$checkout->calculateOrderTotal($order);
-
 		return redirect()->route('order', ['id' => $order->id])->with('status', 'Your order has been placed.');
 	}
 }

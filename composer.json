@@ -45,6 +45,15 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "smooth-sailing": [
+            "composer install --ignore-platform-reqs",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php artisan sail:add mysql",
+            "./vendor/bin/sail build --no-cache",
+            "./vendor/bin/sail up -d",
+            "./vendor/bin/sail artisan migrate:fresh --seed"
         ]
     },
     "extra": {
