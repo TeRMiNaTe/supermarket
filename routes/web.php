@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\{
+	CheckoutController,
+	OrderController,
+	ShopController,
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ShopController::class, 'index'])->name('shop');
+Route::get('/order/{id}', [OrderController::class, 'index'])->name('order');
+
+Route::post('/checkout', [CheckoutController::class, 'index'])->name('checkout');
