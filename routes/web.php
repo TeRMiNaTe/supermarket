@@ -3,6 +3,8 @@
 use App\Http\Controllers\{
 	CheckoutController,
 	OrderController,
+	ProductController,
+	ProductDiscountController,
 	ShopController,
 };
 use Illuminate\Support\Facades\Route;
@@ -22,3 +24,6 @@ Route::get('/', [ShopController::class, 'index'])->name('shop');
 Route::get('/order/{id}', [OrderController::class, 'index'])->name('order');
 
 Route::post('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+
+Route::resource('products', ProductController::class);
+Route::resource('discounts', ProductDiscountController::class);

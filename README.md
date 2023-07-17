@@ -6,9 +6,10 @@ The discounts must be applied regardless of the order of the products.
 
 Here's what's included:
 - Simple checkout & order review pages
-- Request validation
+- Request validation, including custom rules
 - Microservices managing the order & discount processes
 - Seeders with some initial product data
+- CRUD Resource management for products & discounts
 
 | Item | Unit Price | Special Price |
 |------|------------|---------------|

@@ -34,4 +34,17 @@
 			</form>
 		</div>
 	</div>
+
+	<div class="row my-3 mx-2">
+		<div class="col-md-6">
+			<div class="d-grid gap-2">
+				<a href="{{ route('products.index') }}" class="btn btn-outline-primary" role="button">Product List</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="d-grid gap-2">
+				<a href="{{ route('discounts.index') }}" class="btn btn-outline-primary" role="button">Discount List</a>
+			</div>
+		</div>
+	</div>
 @endsection

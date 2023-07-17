@@ -12,6 +12,17 @@ class ProductDiscount extends Model
 	use HasFactory;
 
 	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [
+		'product_id',
+		'quantity',
+		'price',
+	];
+
+	/**
 	 * The product to which the discount can be applied
 	 */
 	public function product(): BelongsTo
